@@ -1,11 +1,11 @@
-# 📄 Cloud Resume Challenge — Infrastructure Serverless Full-Stack
+# Cloud Resume Challenge — Infrastructure Serverless Full-Stack
 
 [![Terraform](https://img.shields.io/badge/IaC-Terraform-844FBA?logo=terraform)](https://www.terraform.io/)
 [![AWS](https://img.shields.io/badge/Cloud-AWS-FF9900?logo=amazonaws)](https://aws.amazon.com/)
 [![GitHub Actions](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions-2088FF?logo=githubactions&logoColor=white)](https://github.com/features/actions)
 [![Status](https://img.shields.io/badge/status-terminé-brightgreen)]()
 
-## 🎯 Objectif du projet
+## Objectif du projet
 
 Implémentation du [**Cloud Resume Challenge**](https://cloudresumechallenge.dev/), un défi
 open-source reconnu dans la communauté cloud, consistant à héberger son CV en ligne sur une
@@ -16,7 +16,7 @@ entièrement automatisé.
 > L'implémentation, le code Terraform, le backend Lambda et le pipeline CI/CD ci-dessous
 > sont ma réalisation personnelle du challenge.
 
-## 🏗️ Architecture
+## Architecture
 
 ```mermaid
 flowchart LR
@@ -47,7 +47,7 @@ flowchart LR
 | **Terraform** | Infrastructure 100 % as Code (aucune action manuelle console) |
 | **GitHub Actions** | Pipeline CI/CD : `terraform apply` + synchronisation du frontend à chaque push sur `main` |
 
-## 📁 Structure du dépôt
+## Structure du dépôt
 
 ```
 .
@@ -67,7 +67,7 @@ flowchart LR
 └── README.md
 ```
 
-## 🚀 Déploiement
+## Déploiement
 
 ### 1. Déploiement manuel (première fois / test local)
 
@@ -97,7 +97,7 @@ Le workflow `.github/workflows/deploy.yml` se déclenche à chaque `push` sur `m
 Configurer dans les **secrets GitHub** du dépôt :
 - `AWS_ROLE_ARN` : rôle IAM assumable via OIDC (GitHub → AWS), pour éviter de stocker des clés d'accès statiques.
 
-## 🧠 Points techniques abordés
+## Points techniques abordés
 
 - Architecture **100 % serverless** (aucun serveur à gérer)
 - **CloudFront + OAC** pour sécuriser l'accès au bucket S3 (pas d'accès public direct)
@@ -106,14 +106,14 @@ Configurer dans les **secrets GitHub** du dépôt :
 - Pipeline **CI/CD GitHub Actions** avec authentification OIDC (sans clés statiques)
 - Séparation claire frontend / backend / infrastructure
 
-## 🔮 Améliorations futures
+## Améliorations futures
 
 - [ ] Nom de domaine personnalisé + certificat ACM (`ahmedbakir.dev`)
 - [ ] Tests unitaires du Lambda (pytest + moto pour mocker DynamoDB)
 - [ ] Étape de tests dans le pipeline CI avant `terraform apply`
 - [ ] Observabilité : dashboard CloudWatch + alarme sur erreurs Lambda
 
-## 👤 Auteur
+## Auteur
 
 **Ahmed Bakir** — Étudiant Ingénieur Réseaux & Cloud (EPSI Lyon / ENIG)
 [LinkedIn](https://linkedin.com/in/ahmed-bk) · [GitHub](https://github.com/BakirAhmed)
